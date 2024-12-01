@@ -1,0 +1,26 @@
+<script>
+    //Problema: Somar Números
+    /*
+    Considere o seguinte Array:
+    let lista = ["A", "E", 2, 4.8, "CINQUENTA", "Araquari", 80, 10, 3.2];
+    Some os números da lista e apresente o resultado.
+    */
+
+    //Entrada
+    let lista = ["A", "E", 2, 4.8, "CINQUENTA", "Araquari", 80, 10, 3.2];
+
+
+    //Processamento
+    let soma = 0;
+    let listaNumeros = [];
+    for (let numeros of lista){
+        if(numeros>0){
+            soma = soma+numeros;
+            listaNumeros.push(numeros); 
+        }
+    }
+
+    //Saída
+    document.write(`Os números que fazer parte da lista são: ${listaNumeros.join(", ")}<br>E a soma desses números é ${soma}.`)
+
+</script>

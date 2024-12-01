@@ -1,0 +1,49 @@
+<script>
+    //Problema: Cidades e Estados
+    /*
+    Considere a seguinte lista de Cidades:
+    let cidades = ["Porto Alegre", "Curitiba", "Florianópolis", "Joinville", "Blumenau", "Gramado", "Santa Maria", "Londrina", "Itajaí"];
+    Pergunte ao usuário a qual estado pertence cada uma das cidades e adicione em listas separadas, sendo uma lista para cada estado.
+    No final do programa apresente os estados com as suas respectivas cidades. Porém, ordene a apresentação das listas, apresentando de forma decrescente pela quantidade 
+    de cidades que o estado possui.
+    */
+
+    //Entrada
+    let cidades = ["Porto Alegre", "Curitiba", "Florianópolis", "Joinville", "Blumenau", "Gramado", "Santa Maria", "Londrina", "Itajaí"];
+    let SC = [];
+    let PR = [];
+    let RS = [];
+
+    //Processamento
+    for (let cidade of cidades){
+        const estado = prompt(`Qual estado pertece ${cidade}?`).toLowerCase().trim();
+        if(estado === "riograndedosul"){
+            RS.push(cidade);
+        } else if(estado === "santacatarina"){
+            SC.push(cidade);
+        } else{
+            PR.push(cidade);
+        }
+    }
+    let mensagem;
+    if ((SC.length >= PR.length) && (PR.length >= RS.length)){
+    mensagem = `Lista de SC: ${SC.join(", ")}. Com ${SC.length} cidades. <br>Lista de PR: ${PR.join(", ")}. Com ${PR.length} cidades. <br>Lista de RS: ${RS.join(", ")}. Com ${RS.length} cidades.`;
+    } else if ((SC.length >= RS.length) && (RS.length >= PR.length)){
+        mensagem = `Lista de SC: ${SC.join(", ")}. Com ${SC.length} cidades. <br>Lista de RS: ${RS.join(", ")}. Com ${RS.length} cidades. <br>Lista de PR: ${PR.join(", ")}. Com ${PR.length} cidades.`;
+    } else if ((PR.length >= SC.length) && (SC.length >= RS.length)){
+        mensagem = `Lista de PR: ${PR.join(", ")}. Com ${PR.length} cidades. <br>Lista de SC: ${SC.join(", ")}. Com ${SC.length} cidades. <br>Lista de RS: ${RS.join(", ")}. Com ${RS.length} cidades.`;
+    } else if ((PR.length >= RS.length) && (RS.length >= SC.length)){
+        mensagem = `Lista de PR: ${PR.join(", ")}. Com ${PR.length} cidades. <br>Lista de RS: ${RS.join(", ")}. Com ${RS.length} cidades. <br>Lista de SC: ${SC.join(", ")}. Com ${SC.length} cidades.`;
+    } else if ((RS.length >= SC.length) && (SC.length >= PR.length)){
+        mensagem = `Lista de RS: ${RS.join(", ")}. Com ${RS.length} cidades. <br>Lista de SC: ${SC.join(", ")}. Com ${SC.length} cidades. <br>Lista de PR: ${PR.join(", ")}. Com ${PR.length} cidades.`;
+    } else if ((RS.length >= PR.length) && (PR.length >= SC.length)){
+        mensagem = `Lista de RS: ${RS.join(", ")}. Com ${RS.length} cidades. <br>Lista de PR: ${PR.join(", ")}. Com ${PR.length} cidades. <br>Lista de SC: ${SC.join(", ")}. Com ${SC.length} cidades.`;
+    } else{
+        mensagem = `Algo deu errado!`;
+    }
+
+
+    //Saída
+
+    document.write(mensagem);
+</script>
