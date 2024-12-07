@@ -9,20 +9,33 @@
 
     //Entrada
     let nomes = ["Hilário", "Rafaela", "José", "Bárbara", "Fábio", "Júlia"];
+    let letrasAcento = ["á", "é", "í", "ó", "ú"];
+    let letraSemAcento = ["a", "e", "i", "o", "u"];
+    let nomesACorrigir = [];
+    let nomesCorrigidos = [];  
 
     //Processamento
-    let listaAcento = "áéíóúÁÉÍÓÚ";
-    let listaNomesAcentos= [];
-    let contador = 0;
-    for(let nomesAcento of nomes){
-       if(listaAcento.includes(nomesAcento)){
-        listaNomesAcentos.push(nomesAcento);
-       }
+    for(acento of nomes){
+        let nomeCorrigido = "";
+        let precisaCorrigir = false;
+        for(caractere of acento){
+        if (letrasAcento.includes(caractere)) {
+            let retirar = letrasAcento.indexOf(caractere);
+            nomeCorrigido += letraSemAcento[retirar];
+            precisaCorrigir = true;
+        } else {
+            nomeCorrigido += caractere;
+        }
+        }
+        if (precisaCorrigir) {
+        nomesACorrigir.push(acento); // Adiciona o nome original à lista de nomes a corrigir
+        nomesCorrigidos.push(nomeCorrigido); // Adiciona o nome corrigido à lista
     }
-    document.write(listaNomesAcentos)
-   
+    }
+    
 
     //Saída
-    //Não terminei
+    document.write(`Lista dos nomes com Acento: ${nomesACorrigir.join(", ")}.<br>
+    Lista dos nomes com acento após correção dos acentos: ${nomesCorrigidos.join(", ")}`);
 
 </script>
