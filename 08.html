@@ -17,11 +17,11 @@
     //Processamento
     for (let cidade of cidades){
         const estado = prompt(`Qual estado pertece ${cidade}?`).toLowerCase().trim();
-        if(estado === "riograndedosul"){
+        if(estado === "rio grande do sul"){
             RS.push(cidade);
-        } else if(estado === "santacatarina"){
+        } else if(estado === "santa catarina"){
             SC.push(cidade);
-        } else{
+        } else if(estado === "parana" || estado === "paraná"){
             PR.push(cidade);
         }
     }

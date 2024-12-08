@@ -17,10 +17,9 @@
     notasAluno.sort((a, b) => a-b);
     const media = soma/notasAluno.length;
 
+    //Saída
     document.write(`A menor nota obtida foi: ${notasAluno[0]}.<br>
     A maior foi: ${notasAluno[notasAluno.length-1]}.<br>
-    E a média dele é: ${media.toFixed(2)}.`);
-
-    //Saída
+    E a média dele é: ${media.toFixed(2).replace(".", ",")}.`);
 
 </script>

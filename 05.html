@@ -14,15 +14,15 @@
     let bebidasPermitidas = [];
 
     for (let semAlcool of bebidas){
-        const classBebida = prompt(`A/O ${semAlcool} é uma bebida permita para menores de 18 anos? SIM ou NÃo`).toUpperCase();
+        const classBebida = prompt(`A/O ${semAlcool} é uma bebida permita para menores de 18 anos? SIM ou NÃO`).toUpperCase();
         if(classBebida === "SIM"){
             bebidasPermitidas.push(semAlcool);
-        }else if (classBebida !== "NÃO") {
+        }else if (classBebida !== "NÃO" && classBebida !== "NAO") {
             alert("Resposta inválida! Por favor, responda apenas com SIM ou NÃO.");
         }
     }
-    document.write(`As bebidas permitidas para menores de 18 anos são: ${bebidasPermitidas.join(", ")}.`);
 
     //Saída
+    document.write(`As bebidas permitidas para menores de 18 anos são: ${bebidasPermitidas.join(", ")}.`);
 
 </script>

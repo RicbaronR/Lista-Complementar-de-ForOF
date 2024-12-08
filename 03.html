@@ -6,12 +6,12 @@
     */
 
     //Entrada
-    const palavra = prompt(`Informe uma palavra:`).toLowerCase()
+    const palavra = prompt(`Informe uma palavra:`).toLowerCase();
 
     //Processamento
     let vogais = 0;
     let conso = 0;
-    let listaVogais = "aeiou";
+    let listaVogais = "aeiouáéíóúâêîôûãõàèìòù";
 
     for (let caracteres of palavra){
         if(listaVogais.includes(caracteres)){
@@ -23,6 +23,6 @@
 
     //Saída
     document.write(`O número de vogais é: ${vogais}.<br>
-    O número de consoantes é: ${conso}.`)
+    O número de consoantes é: ${conso}.`);
 
 </script>

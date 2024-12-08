@@ -9,15 +9,13 @@
 
     //Entrada
     let cores = ["Branco", "Azul", "Marrom", "Cinza", "Verde", "Amarelo", "Vermelho", "Preto"];
-    const coresPreferidas = prompt(`Branco
-Azul
-Marrom
-Cinza
-Verde
-Amarelo
-Vermelho
-Preto
-        Informe quais são suas cores favoritas:`).toLowerCase();
+    const coresPreferidas = prompt(`Branco  Azul  
+Marrom  Cinza  
+Verde  Amarelo 
+Vermelho  Preto
+
+Obs: não é necessário separa por vírgulas, nem "e".
+        Informe quais são suas cores favoritas:`).toLowerCase().trim();
     //Processamento
     let listaCoresPreferidas = [];
     for (let preferidas of cores){
@@ -25,10 +23,14 @@ Preto
             listaCoresPreferidas.push(preferidas);
         }
     }
-    document.write(`Suas cores preferidas são: ${listaCoresPreferidas.join(", ")}.<br>
-    Foram escolhidas ${listaCoresPreferidas.length} cores.`)
-
 
     //Saída
+    if(listaCoresPreferidas.length === 0){
+        document.write(`Informe apenas cores que estão na lista anterior!`)
+    }else{
+        document.write(`Suas cores preferidas são: ${listaCoresPreferidas.join(", ")}.<br>
+    Foram escolhidas ${listaCoresPreferidas.length} cores.`);
+    }
+    
 
 </script>
